@@ -1,0 +1,22 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amstext}
+\usepackage{amsthm}
+\begin{document}
+
+\section*{}
+\textbf{Claim:} If \(f : \mathbb{R} \to \mathbb{R}\) is a strictly increasing function with a dense image, then \(f\) is continuous.
+\begin{proof}
+    Let \(c \in \mathbb{R}\) be given. We argue that \(\lim\limits_{x \to c} f(x) = f(c)\). \\ \\
+    Let \(\epsilon > 0\) be given and define the sets \[
+        I_a = (f(c) - \epsilon, f(c)) \qquad I_b = (f(c), f(c) + \epsilon) \qquad I = I_a \cup I_b \cup \{f(c)\}
+    \]Let \(S_a, S_b\), and \(S\) be the preimages of \(I_a, I_b,\) and \(I\) respectively. \\ \\ Since the image of \(f\) is dense, \(S_a\) and \(S_b\) are non-empty. Furthermore, \(f\) is strictly increasing, so we can conclude that there exists an \(a \in S_a\) and \(b \in S_b\) such that \(a < c < b\). \\ \\
+    Finally, let \(\delta = \min \left\{|a - c|, |b - c|\right\}\). Then, every \(x\) satisfying \(|x - c| < \delta\) will, by the monotonicity of \(f\), also satisfy \[
+        f(c) - \epsilon < f(a) < f(x) < f(b) < f(c) + \epsilon
+    \] so that \(|f(x) - f(c)| < \epsilon\), showing that \(\lim\limits_{x \to c} f(x) = f(c)\), as needed.
+\end{proof}
+
+\end{document}

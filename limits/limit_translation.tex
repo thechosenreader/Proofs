@@ -1,0 +1,17 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amstext}
+\usepackage{amsthm}
+\begin{document}
+
+\section*{}
+\textbf{Claim:} If the \(\lim\limits_{x \to c} f(x) = L\), then \(\lim\limits_{h \to 0} f(c + h) = L\)
+\begin{proof}
+    Let \(\epsilon > 0\) be given and choose \(\delta\) such that if \(0 < |x - c| < \delta\), then \(|f(x) - L| < \epsilon\). \\ \\
+    Then, for any \(h\) satisfying \(0 < |h - 0| < \delta\), we have that \(0 < |(h + c) - c| < \delta\), which implies that \(|f(h + c) - L| < \epsilon\), as needed.
+\end{proof}
+
+\end{document}

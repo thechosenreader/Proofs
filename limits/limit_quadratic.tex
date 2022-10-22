@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amstext}
+\usepackage{amsthm}
+\begin{document}
+
+\section*{}
+\textbf{Claim:} \(\lim_{x \to d} [ax^2 + bx + c] = ad^2 + bd + c\) for any arbitrary \(a, b, c, d \in \mathbb{R}\)
+\begin{proof}
+    Let \(\epsilon > 0\) be given and set \(\delta = \min\left\{ 1, \dfrac{\epsilon}{|a| + |2ad| + |b|} \right\}\). \\ \\
+    If \(0 < |x - d| < \delta\), we have \begin{align*}
+        & \; \; \; \; \; \; \; \; \;\;|x - d| < \delta \leq 1 &&  \\
+        &\implies -1 < x - d < 1 \\
+        &\implies -1 + 2d < x + d < 1 + 2d \\
+        &\implies |x + d| < \max\{|-1+2d|, |1+2d|\}\\
+        &\implies |x + d| < |2d| + 1
+    \end{align*} So, \begin{align*}
+        & \; \; \; \; \, |(ax^2 + bx + c) - (ad^2 + bd + c)| \\
+        &= |a(x - d)(x + d) + b(x - d)| \\
+        &= |x - d||a(x + d) + b| \\
+        &< |x - d||a(1 + 2d) + b| && \text{\(|x + d| < 1 + |2d|\) by above}\\
+        &= |x - d||a + 2ad + b| \\
+        &\leq |x - d|(|a| + |2ad| + |b|) \\
+        &< \delta (|a| + |2ad| + |b|) \\
+        &\leq \left(\dfrac{\epsilon}{|a| + |2ad| + |b|}\right)(|a| + |2ad| + |b|) \\
+        &= \epsilon
+    \end{align*} as needed.
+\end{proof}
+
+\end{document}
